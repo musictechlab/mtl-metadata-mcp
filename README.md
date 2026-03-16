@@ -5,6 +5,8 @@
 
 MCP server for reading and embedding metadata in audio files (MP3, FLAC, OGG). Built for [Claude Code](https://claude.com/claude-code).
 
+> **⚠️ Experimental** — This project is in early development. Use at your own risk. We make no guarantees about stability or correctness and accept no responsibility for data loss or corrupted files. Always back up your audio files before modifying metadata.
+
 ![metadata_read example in Claude Code](docs/metadata-read-example.webp)
 
 ## Tools
