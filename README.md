@@ -1,5 +1,8 @@
 # mtl-metadata-mcp
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/musictechlab/mtl-metadata-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/musictechlab/mtl-metadata-mcp/actions/workflows/ci.yml)
+
 MCP server for reading and embedding metadata in audio files (MP3, FLAC, OGG). Built for [Claude Code](https://claude.com/claude-code).
 
 ![metadata_read example in Claude Code](docs/metadata-read-example.webp)
@@ -120,6 +123,18 @@ You can combine tools in conversation:
 - [MCP SDK](https://modelcontextprotocol.io/) — Model Context Protocol server framework
 - [Poetry](https://python-poetry.org/) — dependency management
 
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a PR.
+
+## Security
+
+To report a vulnerability, please see [SECURITY.md](SECURITY.md).
+
 ## License
 
-MIT
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+Built with care by [MusicTech Lab](https://musictechlab.io)
