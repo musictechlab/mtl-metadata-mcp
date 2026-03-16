@@ -1,7 +1,6 @@
 """MCP server exposing audio metadata tools for Claude Code."""
 
 import json
-import sys
 from pathlib import Path
 
 from mcp.server.fastmcp import FastMCP
@@ -96,7 +95,9 @@ def metadata_clear(file_path: str) -> str:
             return json.dumps({"error": f"File not found: {path}"})
         if path.suffix.lower() not in SUPPORTED_EXTENSIONS:
             return json.dumps(
-                {"error": f"Unsupported format: {path.suffix}. Supported: {', '.join(sorted(SUPPORTED_EXTENSIONS))}"}
+                {
+                    "error": f"Unsupported format: {path.suffix}. Supported: {', '.join(sorted(SUPPORTED_EXTENSIONS))}"
+                }
             )
 
         audio = mutagen.File(str(path))
@@ -104,7 +105,9 @@ def metadata_clear(file_path: str) -> str:
             return json.dumps({"error": f"Could not parse: {path}"})
 
         audio.delete()
-        return json.dumps({"status": "ok", "message": f"All metadata cleared from {path.name}"})
+        return json.dumps(
+            {"status": "ok", "message": f"All metadata cleared from {path.name}"}
+        )
     except (FileNotFoundError, ValueError, PermissionError) as e:
         return json.dumps({"error": str(e)})
 
@@ -133,13 +136,15 @@ def metadata_scan(directory: str, recursive: bool = True) -> str:
                     info = read_metadata(str(p))
                     meta = info.get("metadata", {})
                     missing = [f for f in FIELD_MAP if f not in meta]
-                    files.append({
-                        "file": str(p),
-                        "format": info["format"],
-                        "has_metadata": bool(meta),
-                        "fields_present": list(meta.keys()),
-                        "fields_missing": missing,
-                    })
+                    files.append(
+                        {
+                            "file": str(p),
+                            "format": info["format"],
+                            "has_metadata": bool(meta),
+                            "fields_present": list(meta.keys()),
+                            "fields_missing": missing,
+                        }
+                    )
                 except (ValueError, FileNotFoundError) as e:
                     files.append({"file": str(p), "error": str(e)})
 

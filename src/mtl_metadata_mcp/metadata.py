@@ -6,8 +6,7 @@ from typing import Any
 import mutagen
 from mutagen.easyid3 import EasyID3
 from mutagen.flac import FLAC
-from mutagen.id3 import ID3, TALB, TDRC, TIT2, TPE1, TSRC, ID3NoHeaderError
-from mutagen.mp3 import MP3
+from mutagen.id3 import TALB, TDRC, TIT2, TPE1, TSRC, ID3NoHeaderError
 from mutagen.oggvorbis import OggVorbis
 
 # Mapping from our field names to EasyID3/Vorbis tag names
@@ -61,7 +60,9 @@ def read_metadata(file_path: str) -> dict[str, Any]:
         "format": path.suffix.lower().lstrip("."),
         "duration_seconds": round(audio.info.length, 2) if audio.info else None,
         "bitrate_kbps": (
-            round(audio.info.bitrate / 1000) if hasattr(audio.info, "bitrate") and audio.info.bitrate else None
+            round(audio.info.bitrate / 1000)
+            if hasattr(audio.info, "bitrate") and audio.info.bitrate
+            else None
         ),
         "sample_rate_hz": getattr(audio.info, "sample_rate", None),
         "channels": getattr(audio.info, "channels", None),
@@ -89,7 +90,9 @@ def write_metadata(file_path: str, **fields: str) -> dict[str, Any]:
     # Filter to only valid fields that were provided
     updates = {k: v for k, v in fields.items() if k in FIELD_MAP and v is not None}
     if not updates:
-        raise ValueError(f"No valid fields provided. Valid fields: {', '.join(FIELD_MAP.keys())}")
+        raise ValueError(
+            f"No valid fields provided. Valid fields: {', '.join(FIELD_MAP.keys())}"
+        )
 
     ext = path.suffix.lower()
 
