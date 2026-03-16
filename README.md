@@ -145,6 +145,6 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
   <span> | </span>
   <a href="https://linkedin.com/company/musictechlab">LinkedIn</a>
   <span> | </span>
-  <a href="mailto:hello@musictechlab.io">Let's talk</a><br>
+  <a href="https://musictechlab.io/contact">Let's talk</a><br>
   Crafted by <a href="https://musictechlab.io">musictechlab.io</a>
 </div>
