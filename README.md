@@ -141,10 +141,10 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 <div align="center">
   MusicTech Lab - Rockstars Developers dedicated to the Music Industry<br>
-  <a href="https://www.musictechlab.io">Website</a>
+  <a href="https://musictechlab.io">Website</a>
   <span> | </span>
   <a href="https://linkedin.com/company/musictechlab">LinkedIn</a>
   <span> | </span>
   <a href="mailto:hello@musictechlab.io">Let's talk</a><br>
-  Crafted by <a href="https://www.musictechlab.io">musictechlab.io</a>
+  Crafted by <a href="https://musictechlab.io">musictechlab.io</a>
 </div>
